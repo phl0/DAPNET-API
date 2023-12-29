@@ -16,7 +16,7 @@ Erik Schauer, DO1FFE (do1ffe@darc.de)
 - `requests` Bibliothek (Installierbar via `pip install requests`)
 
 ## Installation
-Klonen Sie das Repository oder laden Sie die Dateien herunter. Stellen Sie sicher, dass Python 3.x installiert ist und fügen Sie die Datei `dapnet_api_client.py` in Ihr Projekt ein.
+Klonen Sie das Repository oder laden Sie die Dateien herunter. Stellen Sie sicher, dass Python 3.x installiert ist und fügen Sie die Datei `dapnet_api.py` in Ihr Projekt ein.
 
 ## Verwendung
 Importieren Sie die `DapnetApiClient`-Klasse aus `dapnet_api.py` in Ihr Python-Skript. Verwenden Sie dann die statische Methode `SendDAPNET` oder erstellen Sie eine Instanz der Klasse, um Nachrichten zu senden.
