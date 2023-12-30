@@ -1,10 +1,10 @@
 # Autor: Erik Schauer, DO1FFE, do1ffe@darc.de
-# Programmname: DAPNET API Client mit SendDAPNET Methode
+# Programmname: DAPNET API Client mit Send Methode
 # Erstelldatum: 29. Dezember 2023
 
 import requests
 
-class DapnetApiClient:
+class DAPNET:
     """
     Diese Klasse implementiert einen Client für die DAPNET API.
     Sie ermöglicht das Senden von Nachrichten über das DAPNET-Netzwerk.
@@ -27,7 +27,7 @@ class DapnetApiClient:
         return response
 
     @staticmethod
-    def SendDAPNET(message, to_callsign, transmitter_group, my_dapnet_callsign, my_dapnet_password):
+    def Send(message, to_callsign, transmitter_group, my_dapnet_callsign, my_dapnet_password):
         """
         Statische Methode zur Vereinfachung des Nachrichtenversands über DAPNET.
 
@@ -38,5 +38,5 @@ class DapnetApiClient:
         :param my_dapnet_password: Das Passwort für die Authentifizierung.
         :return: Das Response-Objekt der HTTP-Anfrage.
         """
-        client = DapnetApiClient(my_dapnet_callsign, my_dapnet_password)
+        client = DAPNET(my_dapnet_callsign, my_dapnet_password)
         return client.send_message(message, to_callsign, transmitter_group)
