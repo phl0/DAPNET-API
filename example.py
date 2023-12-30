@@ -1,5 +1,5 @@
-from dapnet_api import DapnetApiClient
+from dapnet_api import DAPNET
 
-# Beispielverwendung der SendDAPNET Methode
-response = DapnetApiClient.SendDAPNET('Testnachricht', 'destinationcallsign', 'txgroup', 'yourcallsign', 'yourpassword')
+# Beispielverwendung der Send Methode
+response = DAPNET.Send('Testnachricht', 'destinationcallsign', 'txgroup', 'yourcallsign', 'yourpassword')
 print(response)
