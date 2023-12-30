@@ -19,14 +19,14 @@ Erik Schauer, DO1FFE (do1ffe@darc.de)
 Klonen Sie das Repository oder laden Sie die Dateien herunter. Stellen Sie sicher, dass Python 3.x installiert ist und fügen Sie die Datei `dapnet_api.py` in Ihr Projekt ein.
 
 ## Verwendung
-Importieren Sie die `DapnetApiClient`-Klasse aus `dapnet_api.py` in Ihr Python-Skript. Verwenden Sie dann die statische Methode `SendDAPNET` oder erstellen Sie eine Instanz der Klasse, um Nachrichten zu senden.
+Importieren Sie die `DAPNET`-Klasse aus `dapnet_api.py` in Ihr Python-Skript. Verwenden Sie dann die statische Methode `Send` oder erstellen Sie eine Instanz der Klasse, um Nachrichten zu senden.
 
 ### Beispiel
 ```python
-from dapnet_api import DapnetApiClient
+from dapnet_api import DAPNET
 
 # Senden einer Nachricht mit der statischen Methode
-response = DapnetApiClient.SendDAPNET('Testnachricht', 'destinationcallsign', 'txgroup', 'yourcallsign', 'yourpassword')
+response = DAPNET.Send('Testnachricht', 'destinationcallsign', 'txgroup', 'yourcallsign', 'yourpassword')
 print(response)
 ```
 
