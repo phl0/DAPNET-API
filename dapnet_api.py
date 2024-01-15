@@ -26,17 +26,14 @@ class DAPNET:
         response = requests.post(self.url, headers=self.headers, auth=(self.callsign, self.password), json=data)
         return response
 
-    @staticmethod
-    def Send(message, to_callsign, transmitter_group, my_dapnet_callsign, my_dapnet_password):
+    def log_message(self, message, destination_callsign, transmitter_group, emergency=False):
         """
-        Statische Methode zur Vereinfachung des Nachrichtenversands über DAPNET.
+        Sendet eine Logging-Nachricht über das DAPNET-Netzwerk.
 
         :param message: Der Inhalt der Nachricht.
-        :param to_callsign: Das Zielrufzeichen oder eine Liste von Zielrufzeichen.
-        :param transmitter_group: Die Transmittergruppe oder eine Liste von Transmittergruppen.
-        :param my_dapnet_callsign: Das eigene Rufzeichen für die Authentifizierung.
-        :param my_dapnet_password: Das Passwort für die Authentifizierung.
+        :param destination_callsign: Das Zielrufzeichen für die Nachricht.
+        :param transmitter_group: Die Transmittergruppe für die Nachricht.
+        :param emergency: Notfall-Flag (Standard False).
         :return: Das Response-Objekt der HTTP-Anfrage.
         """
-        client = DAPNET(my_dapnet_callsign, my_dapnet_password)
-        return client.send_message(message, to_callsign, transmitter_group)
+        return self.send_message(message, destination_callsign, transmitter_group, emergency)
