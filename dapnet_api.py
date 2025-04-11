@@ -3,6 +3,7 @@
 # Erstelldatum: 29. Dezember 2023
 
 import requests
+from requests.auth import HTTPBasicAuth
 
 class DAPNET:
     """
@@ -10,7 +11,7 @@ class DAPNET:
     Sie ermöglicht das Senden von Nachrichten über das DAPNET-Netzwerk.
     """
 
-    def __init__(self, callsign, password, url='http://www.hampager.de:8080/calls'):
+    def __init__(self, callsign, password, url='https://hampager.de/api/calls'):
         self.callsign = callsign
         self.password = password
         self.url = url
@@ -23,7 +24,7 @@ class DAPNET:
             "transmitterGroupNames": [tx_group] if isinstance(tx_group, str) else tx_group,
             "emergency": emergency
         }
-        response = requests.post(self.url, headers=self.headers, auth=(self.callsign, self.password), json=data)
+        response = requests.post(self.url, headers=self.headers, auth=HTTPBasicAuth(self.callsign, self.password), json=data)
         return response
 
     def log_message(self, message, destination_callsign, transmitter_group, emergency=False):

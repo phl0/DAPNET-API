@@ -1,5 +1,9 @@
 from dapnet_api import DAPNET
 
+client = DAPNET('callsign', 'password')
+
 # Beispielverwendung der Send Methode
-response = DAPNET.Send('Testnachricht', 'destinationcallsign', 'txgroup', 'yourcallsign', 'yourpassword')
-print(response)
+try:
+    response = client.send_message('messagecontent', 'destination-callsign', 'transmitter-group')
+except:
+    print(response)
