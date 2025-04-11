@@ -25,8 +25,10 @@ Importieren Sie die `DAPNET`-Klasse aus `dapnet_api.py` in Ihr Python-Skript. Ve
 ```python
 from dapnet_api import DAPNET
 
+client = DAPNET('callsign', 'password')
+
 # Senden einer Nachricht mit der statischen Methode
-response = DAPNET.Send('Testnachricht', 'destinationcallsign', 'txgroup', 'yourcallsign', 'yourpassword')
+response = client.send_message('Testnachricht', 'destinationcallsign', 'txgroup')
 print(response)
 ```
 
